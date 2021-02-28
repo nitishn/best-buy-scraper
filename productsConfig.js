@@ -55,4 +55,8 @@ module.exports = [
       'product'   : 'EVGA - GeForce RTX 3080 FTW3 ULTRA GAMING 10GB',
       'url'       : 'https://www.bestbuy.com/site/evga-geforce-rtx-3080-ftw3-ultra-gaming-10gb-gddr6-pci-express-4-0-graphics-card/6436196.p?skuId=6436196',
     },
+    {
+      'product'   : 'PNY - NVIDIA GeForce GT 710 VERTO 2GB',
+      'url'       : 'https://www.bestbuy.com/site/pny-nvidia-geforce-gt-710-verto-2gb-ddr3-pci-express-2-0-graphics-card-black/5092306.p?skuId=5092306'
+    }
 ];
