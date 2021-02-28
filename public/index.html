@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graphics Card where</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      socket.on('card-scraped', (msg) => {
+        console.log(msg);
+      });
+      socket.on('checking-card', (msg) => {
+        console.log(msg);
+      });
+    </script>
+  </head>
+</html>
