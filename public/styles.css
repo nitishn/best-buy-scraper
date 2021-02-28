@@ -19,6 +19,7 @@ body {
 
 table {
   width: 100%;
+  border: 3px solid #202932;
 }
 
 tr {
@@ -51,5 +52,20 @@ tr:nth-child(2n+2) td {
   border-radius: 5px;
   color: #fff;
   padding: 8px;
-  background-color: #54a1a0;
+}
+
+.sold-out {
+  background-color: #ff6961;
+}
+
+.sold-out::after {
+  content: "Sold Out";
+}
+
+.in-stock {
+  background-color: #51814F;
+}
+
+.in-stock::after {
+  content: "In Stock";
 }

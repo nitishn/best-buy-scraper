@@ -26,11 +26,8 @@ module.exports = async(io) => {
     if (counter == productsConfig.length) {
       counter = 0;
     }
-
     let index = counter % productsConfig.length;
-
-    console.log('Checking product: ' + productsConfig[index].product);
-    io.emit('checking-card', 'Checking product: ' + productsConfig[index].product);
+    io.emit('checking-card', 'Scraping: ' + productsConfig[index].product);
     // Do the actual page vist
     await page.goto(productsConfig[index].url);
 
@@ -40,11 +37,11 @@ module.exports = async(io) => {
       // Only grab one button in case more than one match
       buttons = buttons.shift();
       let inStockText = await buttons.evaluate(el => el.textContent )
-      console.log(inStockText);
       productsConfig[index].status = inStockText;
+      productsConfig[index].timeChecked = new Date().toLocaleTimeString();
       io.emit('card-scraped', productsConfig[index]); // This will emit the event to all connected sockets
     } else {
-      console.log('Could not find cart button');
+      io.emit('scrape-error', 'Error: Could not find cart button');
     }
     counter++;
   }

@@ -5,72 +5,41 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" media="all" href="styles.css">
   </head>
-
   <body>
     <main>
       <h1> Best Buy Stock Checker </h1>
-      <table class="table">
+      <h2 class="js-server-message"></h2>
+      <h3 class="js-server-error"></h3>
+      <table class="table js-dashboard">
         <thead>
           <tr>
             <th>
-              Product Name
-            </th>
-            <th>
-              Time Checked
+              Product Name {{hello}}
             </th>
             <th>
               Status
             </th>
             <th>
-              Price
+              Last Checked
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td data-title="Product Name">
-              NVIDIA GeForce RTX 3070 8GB
+          {{#products}}
+          <tr data-row="{{product}}">
+            <td data-column="name">
+              {{product}}
             </td>
-            <td data-title="Time Checked">
-              1:00pm
+            <td data-column="status">
+              <a class="button" target="_blank" href="{{url}}"></a>
             </td>
-            <td data-title="Status">
-              <a class="button" href="https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442"> Sold Out </a>
-            </td>
-            <td data-title="Price">
-              10,000
+            <td data-column="time-checked">
             </td>
           </tr>
-          <tr>
-            <td data-title="Product Name">
-              NVIDIA GeForce RTX 3070 8GB
-            </td>
-            <td data-title="Time Checked">
-              1:00pm
-            </td>
-            <td data-title="Status">
-              <a class="button" href="https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442"> Sold Out </a>
-            </td>
-            <td data-title="Price">
-              10,000
-            </td>
-          </tr>
-          <tr>
-            <td data-title="Product Name">
-              NVIDIA GeForce RTX 3070 8GB
-            </td>
-            <td data-title="Time Checked">
-              1:00pm
-            </td>
-            <td data-title="Status">
-              <a class="button" href="https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442"> Sold Out </a>
-            </td>
-            <td data-title="Price">
-              10,000
-            </td>
-          </tr>
+          {{/products}}
         </tbody>
       </table>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="./app.js"></script>
     </main>
   </body>
