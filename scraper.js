@@ -9,7 +9,7 @@ module.exports = async(io) => {
   // Setup browser configs
   const browser = await puppeteer.launch({
     args: [
-      '--no-asndbox',
+      '--no-sandbox',
       '--disable-setuid-sandbox',
       '--ignore-certificate-errors',
     ],
