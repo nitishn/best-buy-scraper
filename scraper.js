@@ -1,11 +1,11 @@
-// Web scraper using Puppeteer
+// Best buy web scraper using Puppeteer
 // Process each product with a source that can be different logic per product
 const puppeteer = require('puppeteer');
+// Configs
 const productsConfig = require('./productsConfig');
-
 const addToCartSelctor = '.btn-lg.add-to-cart-button';
 
-(async () => {
+module.exports = async(io) => {
   // Setup browser configs
   const browser = await puppeteer.launch({
     args: [
@@ -19,18 +19,20 @@ const addToCartSelctor = '.btn-lg.add-to-cart-button';
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36');
 
+  // This loops forever checking products!
   let counter = 0;
-
   while (true) {
 
     if (counter == productsConfig.length) {
       counter = 0;
     }
 
-    console.log('Checking product: ' + productsConfig[counter % productsConfig.length].product);
+    let index = counter % productsConfig.length;
 
+    console.log('Checking product: ' + productsConfig[index].product);
+    io.emit('checking-card', 'Checking product: ' + productsConfig[index].product);
     // Do the actual page vist
-    await page.goto(productsConfig[counter % productsConfig.length].url);
+    await page.goto(productsConfig[index].url);
 
     // Grab the add to cart button and check it's text
     let buttons = await page.$$(addToCartSelctor);
@@ -39,10 +41,11 @@ const addToCartSelctor = '.btn-lg.add-to-cart-button';
       buttons = buttons.shift();
       let inStockText = await buttons.evaluate(el => el.textContent )
       console.log(inStockText);
+      productsConfig[index].status = inStockText;
+      io.emit('card-scraped', productsConfig[index]); // This will emit the event to all connected sockets
     } else {
       console.log('Could not find cart button');
     }
     counter++;
   }
-
-})();
+}
