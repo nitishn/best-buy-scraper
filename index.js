@@ -25,4 +25,4 @@ app.get('/', (req, res) => {
 });
 
 // Scraper setup
-// require('./scraper')(io);
+require('./scraper')(io);
