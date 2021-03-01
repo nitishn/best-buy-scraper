@@ -12,8 +12,8 @@ app.set('view engine', 'mustache');
 app.use(express.static('public'))
 
 // Express setup
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+http.listen(process.env.PORT || 5000, () => {
+  console.log('listening on *:5000');
 });
 
 // Routes
