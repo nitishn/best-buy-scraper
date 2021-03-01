@@ -17,11 +17,13 @@ module.exports = async(io) => {
 
   // Setup page configs
   const page = await browser.newPage();
+  console.log(page);
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36');
 
   // This loops forever checking products!
   let counter = 0;
   while (true) {
+    console.log(counter);
     if (counter == productsConfig.length) {
       counter = 0;
     }
