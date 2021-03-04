@@ -23,6 +23,10 @@
           $(status).find('a').removeClass('sold-out');
           $(status).find('a').addClass('in-stock');
         break;
+        case 'Shop Open-Box':
+          $(status).find('a').removeClass('sold-out');
+          $(status).find('a').addClass('in-stock');
+        break;
       }
       // Update time checked
       let timeChecked = $(row).find('td[data-column="time-checked"]');
