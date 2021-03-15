@@ -15,15 +15,15 @@
       // Update status
       let status = $(row).find('td[data-column="status"]');
       switch (card.status) {
-        case 'Sold Out':
+        case 'sold out':
           $(status).find('a').addClass('sold-out');
           $(status).find('a').removeClass('in-stock');
         break;
-        case 'Add to Cart':
+        case 'add to cart':
           $(status).find('a').removeClass('sold-out');
           $(status).find('a').addClass('in-stock');
         break;
-        case 'Shop Open-Box':
+        case 'shop open-box':
           $(status).find('a').removeClass('sold-out');
           $(status).find('a').addClass('in-stock');
         break;
@@ -31,6 +31,9 @@
       // Update time checked
       let timeChecked = $(row).find('td[data-column="time-checked"]');
       $(timeChecked).html(card.timeChecked);
+      // Add Source to source column 
+      let source = $(row).find('td[data-column="source"]');
+      $(source).html(card.source);
     }
   });
 

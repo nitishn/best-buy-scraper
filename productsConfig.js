@@ -16,6 +16,14 @@ module.exports = [
       'url'     : 'https://www.bestbuy.com/site/evga-geforce-rtx-3080-xc3-ultra-gaming-10gb-gddr6-pci-express-4-0-graphics-card/6432400.p?skuId=6432400'
     },
     {
+      'product' : 'AMD Radeon™ RX 6800 XT Graphics',
+      'url'     : 'https://www.amd.com/en/direct-buy/5458372800/us'
+    },
+    {
+      'product' : 'AMD Radeon™ RX 6800 Graphics',
+      'url'     : 'https://www.amd.com/en/direct-buy/5458373400/us'
+    },
+    {
       'product'   : 'EVGA - GeForce RTX 3070 XC3 ULTRA GAMING 8GB',
       'url'       : 'https://www.bestbuy.com/site/evga-geforce-rtx-3070-xc3-ultra-gaming-8gb-gddr6-pci-express-4-0-graphics-card/6439299.p?skuId=6439299',
     },
@@ -55,8 +63,4 @@ module.exports = [
       'product'   : 'EVGA - GeForce RTX 3080 FTW3 ULTRA GAMING 10GB',
       'url'       : 'https://www.bestbuy.com/site/evga-geforce-rtx-3080-ftw3-ultra-gaming-10gb-gddr6-pci-express-4-0-graphics-card/6436196.p?skuId=6436196',
     },
-    {
-      'product'   : 'MSI - AMD Radeon RX 6800 XT 16G',
-      'url'       : 'https://www.bestbuy.com/site/msi-amd-radeon-rx-6800-xt-16g-16gb-gddr6-pci-express-4-0-graphics-card-black/6440913.p?skuId=6440913'
-    }
 ];
