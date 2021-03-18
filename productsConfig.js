@@ -20,8 +20,12 @@ module.exports = [
       'url'     : 'https://www.amd.com/en/direct-buy/5458372800/us'
     },
     {
-      'product' : 'AMD Radeon™ RX 6800 Graphics',
-      'url'     : 'https://www.amd.com/en/direct-buy/5458373400/us'
+      'product' : 'AMD Radeon™ RX 6700 XT Graphics',
+      'url'     : 'https://www.amd.com/en/direct-buy/5498471500/us'
+    },
+    {
+      'product'	: 'AMD Radeon™ RX 6800 Graphics',
+      'url'	: 'https://www.amd.com/en/direct-buy/5458373400/us'
     },
     {
       'product'   : 'EVGA - GeForce RTX 3070 XC3 ULTRA GAMING 8GB',
