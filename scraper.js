@@ -3,7 +3,7 @@
 const utilities = require('./inc/utilities');
 
 // Configs
-const productsConfig = require('./productsConfig');
+const productsConfig = require('./models/productsConfig');
 
 module.exports = async(io) => {
 
